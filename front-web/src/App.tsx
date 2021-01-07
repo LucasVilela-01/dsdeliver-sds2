@@ -1,4 +1,5 @@
 import './App.css';
+import Home from './Home';
 import Navbar from './Navbar';
 // import Hello from './Hello'; // Importando o componente "Hello", from dizer entre '' qual o diretório, como está no mesmo diretório, usa-se ./
 
@@ -6,9 +7,11 @@ import Navbar from './Navbar';
 function App() {
  // return <Hello message="Lucas"/>; // Mostrando o componente "Hello"
     return (
-      <div>
+      // React fragment
+      <>
         <Navbar />
-      </div>
+        <Home />
+      </>
     );
 }
 
