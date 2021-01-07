@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap'); /* Importando a fonte utilizada no navbar, não basta apenas importar a fonte, aqui apenas 
+baixou o arquivo da fonte, porém, temos que setar a fonte na aplicação, como por exemplo, especificando essa fonte no "Body" */
+
+:root { /* Quer dizer que está disponível na raiz da aplicação, então qualquer lugar da aplicação enchergará essas variaveis do css */
+  --primary-color: #da5c5c; /* primary-color é um tipo de váriavel. Tem que começar com "--", "primary-color" é o nome da váriavel, : e o valor */
+  --primary-hover-color: #a74b4b;
+  --dark-color: #263238;
+  --secondary-color: #9E9E9E;
+  --light-color: #F5F5F5;
+}
+
+html, body { /* Resetando a margem que já vem padrão no HTML e no Body */
+  margin: 0;
+  padding:0;
+}
+
+body { /* Definindo qual a família de fontes de toda aplicação */
+  font-family: 'Open Sans', sans-serif; /* Nesse caso é a open sans */
+}
+
+a { /* Remoção do sublinhado no texto onde está o link e remove de todas as tags a utilizadas no projeto */
+  text-decoration: none;
+}
