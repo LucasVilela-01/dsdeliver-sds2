@@ -1,6 +1,7 @@
 .home-container {
     padding-top: 100px;
-    height: calc(100vh - 254px);
+    height: calc(100vh - 254px); /* Calculo feito para o rodapé ficar sempre grudado no fim da página, mas sem aparecer a barra de rolagem 
+    Calculando 100% da altura do dispositivo do usuário, descontando todo o padding, margin e tudo mais do rodapé */
   }
   
   .home-container h1 {
