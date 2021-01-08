@@ -2,8 +2,9 @@ import './styles.css';
 import StepsHeader from './StepsHeader';
 import ProductsList from './ProductsList';
 import { useEffect, useState } from 'react';
-import { Product } from './types';
+import { OrderLocationdata, Product } from './types';
 import { fetchProducts } from '../api';
+import OrderLocation from './OrderLocation';
 
 // Esse componente Order é responsável por realizar o carregamento das informações do produto de forma dinâmica e passando como prop para o ProductList
 
@@ -23,6 +24,9 @@ inicializaria o products, mas por convenção, a própria documentação do Reac
     // Fazendo o código rodar apenas quando chegar na lista, carregando as informações via back-end
     // Todo o bloco dentro do parenteses da useEffect é uma ArrowFunction
 
+    const [orderLocation, setOrderLocation] =  useState<OrderLocationdata>(); /* Criando um estado quando o usuário selecionar o local
+    Obs.: orderLocation - nome de variavel, diferente do nome do componente OrderLocation que ambos nomes começam com letra maiuscula */
+
     useEffect(() => {
         fetchProducts()
         .then(response => setProducts(response.data)) // Utiliza esse quando a requisição der sucesso
@@ -40,6 +44,7 @@ componente Order inicializar */
         <div className="orders-container">
             <StepsHeader />
             <ProductsList products={products} />
+            <OrderLocation onChangeLocation={location => setOrderLocation(location)} />
         </div>
     )
 }

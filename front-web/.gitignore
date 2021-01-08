@@ -25,3 +25,4 @@ yarn-error.log*
 .eslintcache
 Hello.tsx
 Counter.tsx
+.env
