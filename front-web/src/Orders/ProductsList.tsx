@@ -1,16 +1,24 @@
+import { checkIsSelected } from "./helpers";
 import ProductCard from "./ProductCard";
 import { Product } from "./types";
 
 type Props = { // Toda vez que criado uma Prop é um parametro sendo passado para o componente
     products: Product[];
+    selectedProducts: Product[];
+    onSelectProduct: (product: Product) => void;
 }
 
-function ProductsList({ products } : Props) {
+function ProductsList({ products, selectedProducts, onSelectProduct } : Props) {
     return (
         <div className="orders-list-container">
             <div className="orders-list-items">
                 {products.map(product => (
-                    <ProductCard key={product.id} product={product}/>
+                    <ProductCard
+                        key={product.id} 
+                        product={product}
+                        onSelectProduct={onSelectProduct}
+                        isSelected={checkIsSelected(selectedProducts, product)}
+                    />
                 ))} 
             </div> 
         </div> // .map - é do JS e o React utiliza, sendo um método de array(lista) do JS que usa para manipular/transformar uma lista

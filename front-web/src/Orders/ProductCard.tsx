@@ -1,28 +1,20 @@
+import { formatPrice } from './helpers';
 import { Product } from './types';
 
 // Criando um método para passar as informações dos produtos dinamicamente
 
 type Props = {
     product: Product;
+    onSelectProduct: (product: Product) => void;
+    isSelected: boolean; // reconhece se esta selecionado ou não.
 }
 
-// Arrumando a formatação do preço
-// Forma moderna de fazer isso com JS, é usar a própria API de NumberFormat
-function formatPrice(price: number) {
-    const formatter = new Intl.NumberFormat('pt-BR', { // Intl(internalization) - API de internacionalização do JS
-        style: 'currency',
-        currency: 'BRL',
-        minimumFractionDigits: 2
-    }); // O 1º parametro é sua localização
-/* Entre {} uma série de configuração para formatar corretamente, 1º style que nessa caso é currency, transformando para moeda, 2º qual é o tipo da
-moeda e o 3º é quantas casas após a vírgula */
-
-    return formatter.format(price);
-}
-
-function ProductCard({ product } : Props) {
+function ProductCard({ product, onSelectProduct, isSelected }: Props) {
     return (
-        <div className="order-card-container">
+        <div 
+            className={`order-card-container ${isSelected ? 'selected' : ''}`}
+            onClick={() => onSelectProduct(product)}
+        >
             <h3 className="order-card-title">
                 {product.name}
             </h3>
@@ -32,7 +24,7 @@ function ProductCard({ product } : Props) {
                 alt={product.name}
             />
             <h3 className="order-card-price">
-                {formatPrice (product.price)}
+                {formatPrice(product.price)}
             </h3>
             <div className="order-card-description">
                 <h3>Descrição</h3>

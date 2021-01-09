@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import AsyncSelect from 'react-select/async'; /* Usando o async, quer dizer que enquanto estamos digitando o enderenço, a aplicação fique buscando novos
 endereços */
 import { fetchLocalMapBox } from '../api';
-import { OrderLocationdata } from './types';
+import { OrderLocationData } from './types';
 
 const initialPosition = {
     lat: -23.5045588,
@@ -22,7 +22,7 @@ type Place = {
 }
 
 type Props = {
-    onChangeLocation: (location: OrderLocationdata) => void;
+    onChangeLocation: (location: OrderLocationData) => void;
 }
 
 function OrderLocation({onChangeLocation}: Props) { /* Aqui é toda a parte que trata do Select, selecionar o endereço, fazer a busca, toda essa parte 
