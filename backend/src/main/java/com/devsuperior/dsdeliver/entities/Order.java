@@ -96,6 +96,17 @@ public class Order implements Serializable {
 	public void setStatus(OrderStatus status) {
 		this.status = status;
 	}
+	
+	public Double getTotal() {
+		double sum = 0.0;
+		for (Product p : products) { /* Como que o sistema vai saber que tem que pegar os produtos relacionados ao meu pedido ? Como isso funciona se essas 
+			coisas estão no banco de dados ? A ferramenta ORM (JPA com hibernate utilizado no projeto) faz isso de forma trasparente. Se buscar um pedido do 
+			banco e chamar o getTotal nesse pedido, automaticamente, a ferramenta de ORM(JPA), ele sabe ir lá no banco de dados e buscar os produtos desse
+			pedido e faz a soma */
+			sum += p.getPrice();
+		}
+		return sum;
+	}
 
 	public Set<Product> getProducts() {
 		return products;
