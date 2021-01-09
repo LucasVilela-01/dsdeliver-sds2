@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./Home";
 import Orders from "./Orders";
+import OrderDetails from "./OrderDetails";
 
 /* Adicionar a pilha de navegação no app, pensar nas rotas como pilha, então se você clica em um botão que te redireciona para uma outra rota, você está
 empilhando/adicionando um item naquela pilha e se apertar em voltar para a página anterior, você tem que desempilhar, então essa é a ideia das rotas */
@@ -23,7 +24,7 @@ export default function Routes() {
             > 
                 <Stack.Screen name="Home" component={Home}></Stack.Screen> 
                 <Stack.Screen name="Orders" component={Orders}></Stack.Screen>
-
+                <Stack.Screen name="OrderDetails" component={OrderDetails}></Stack.Screen>
             </Stack.Navigator>
         </NavigationContainer>
     )

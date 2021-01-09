@@ -1,20 +1,48 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Order } from '../types';
+import dayjs from 'dayjs'; // Importando a biblioteca dayjs, por padrão vem em inglês
+import 'dayjs/locale/pt-br'; // Importando os arquivos de tradução para português
+import relativeTime from 'dayjs/plugin/relativeTime';
 
-export default function OrderCard() {
+dayjs.locale('pt-br') // Pede para o dayjs usar o locale importado
+dayjs.extend(relativeTime);
+
+type Props = {
+  order: Order;
+}
+
+function dateFromNow(date: string) { /* Formata a data que vem do back end(UTC) para quanto tempo foi feito o pedido de acordo com o horário local, fazendo de forma
+ automatica através da biblioteca dayjs*/
+  return dayjs(date).fromNow();
+}
+
+export function formatPrice(price: number) {
+  const formatter = new Intl.NumberFormat('pt-BR', { 
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2
+  });
+
+  return formatter.format(price);
+}
+
+export default function OrderCard({ order } : Props) {
   return (
-      <View>
-          <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.orderName}>Pedido 1</Text>
-                <Text style={styles.orderPrice}>R$ 50,00</Text>
-            </View>
-            <Text style={styles.text}>Há 30min</Text>
-            <View style={styles.productsList}>
-                <Text style={styles.text}>Pizza Calabresa</Text>
-            </View>
-          </View>
+    <View>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <Text style={styles.orderName}>Pedido {order.id}</Text>
+          <Text style={styles.orderPrice}>R$ {order.total.toFixed(2)}</Text>
+        </View>
+          <Text style={styles.text}>{dateFromNow(order.moment)}</Text>
+          <View style={styles.productsList}>
+            {order.products.map(product => (
+                <Text key={product.id} style={styles.text}>{product.name}</Text>
+            ))}
+        </View>
       </View>
+    </View>
   );
 }
 
