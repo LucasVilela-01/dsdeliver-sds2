@@ -3,7 +3,7 @@
 import axios from "axios";
 import { OrderPayload } from "./Orders/types";
 
-const API_URL = 'http://localhost:8080'; // Cria essa constante separada do /products, pois essa url será usada em outros momentos
+const API_URL = process.env.REACT_APP_API_URL; // Cria essa constante separada do /products, pois essa url será usada em outros momentos
 const mapboxToken = process.env.REACT_APP_ACCESS_TOKEN_MAP_BOX;
 
 export function fetchProducts() { // Pode usar também a nomenclatura de ArrowFunction caso queira.
