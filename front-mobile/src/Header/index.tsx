@@ -1,12 +1,23 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react'; // Nas novas versões do react web, não é ncessário add essa import, mas no react native ainda é
 import { StyleSheet, Text, View, Image } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 export default function Header() {
+
+    const navigation = useNavigation(); // é um hook(funções especiais do react) do react
+
+    const handleOnPress = () => {
+      navigation.navigate('Home')
+    }
+
     return (
-        <View style={styles.container}>
-            <Image source={require('../assets/logo.png')} />
-            <Text style={styles.text}>DS Delivery</Text>
-        </View>
+        <TouchableWithoutFeedback onPress={handleOnPress}> 
+            <View style={styles.container}>
+                <Image source={require('../assets/logo.png')} />
+                <Text style={styles.text}>DS Delivery</Text>
+            </View>
+        </TouchableWithoutFeedback>
     );
 }
 
@@ -16,6 +27,8 @@ a que documentação recomenda */
 // Quando se tem uma propriedade com mais de 1 palavra, junta essas palavras e usa o padrão camelcase
 
 // Quando indicar o px, apenas deixe o número
+
+// </TouchableWithoutFeedback> - temos que usar essa tag, pois por padrão as views não são clicavéis, e assim conseguimos capturar o evento de clique
 
 const styles = StyleSheet.create({
     container: {
