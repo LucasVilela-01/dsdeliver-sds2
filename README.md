@@ -6,7 +6,7 @@
 
 https://sds2-lucas.netlify.app/
 
-# DS Deliver
+# DS Delivery
 
 DS Deliver é uma aplicação full stack web e mobile construída durante a 2º edição da **Semana DevSuperior 2.0** (#sds2), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
@@ -23,7 +23,7 @@ Além disso, o app mobile tem integração com GPS após iniciar a navegação, 
 ## Layout mobile
 ![Mobile 1](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile1.png) ![Mobile 2](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile2.png) ![Mobile 3](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile3.png)
 
-#Tecnologias utilizadas
+# Tecnologias utilizadas
 ## Back end
 - Java
 - Spring Boot
