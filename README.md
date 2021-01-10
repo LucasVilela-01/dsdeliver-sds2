@@ -22,6 +22,7 @@ Além disso, o app mobile tem integração com GPS após iniciar a navegação, 
 
 ## Layout mobile
 ![Mobile 1](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile1.png)            ![Mobile 2](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile2.png) 
+
 ![Mobile 3](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile3.png)
 
 # Tecnologias utilizadas
