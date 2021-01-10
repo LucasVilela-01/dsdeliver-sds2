@@ -21,7 +21,8 @@ Além disso, o app mobile tem integração com GPS após iniciar a navegação, 
 ![Web 1](https://github.com/LucasVilela-01/assetssds2.0/blob/main/web1.png) ![Web 2](https://github.com/LucasVilela-01/assetssds2.0/blob/main/web2.png)
 
 ## Layout mobile
-![Mobile 1](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile1.png) ![Mobile 2](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile2.png) ![Mobile 3](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile3.png)
+![Mobile 1](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile1.png)            ![Mobile 2](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile2.png) 
+![Mobile 3](https://github.com/LucasVilela-01/assetssds2.0/blob/main/mobile3.png)
 
 # Tecnologias utilizadas
 ## Back end
@@ -49,7 +50,21 @@ Pré-requisitos: Java 11
 
 ```bash
 # clonar repositório
-git clone https://github.com/LucasVilela-01/dsdeliver-sds2
+git clone https://github.com/LucasVilela-01/sds1
+
+# entrar na pasta do projeto back end
+cd backend
+
+# executar o projeto
+./mvnw spring-boot:run
+```
+
+## Front end web
+Pré-requisitos: npm / yarn
+
+```bash
+# clonar repositório
+ggit clone https://github.com/LucasVilela-01/dsdeliver-sds2
 
 # entrar na pasta do projeto front end web
 cd front-web
@@ -59,6 +74,13 @@ npm install
 
 # executar o projeto
 npm start
+```
+## Front end mobile
+Pré-requisitos: npm / yarn
+
+```bash
+# clonar repositório
+git clone https://github.com/LucasVilela-01/dsdeliver-sds2
 
 # entrar na pasta do projeto front end mobile
 cd front-mobile
