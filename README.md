@@ -105,4 +105,4 @@ https://www.linkedin.com/in/lucasvilela-01/
 
 # Agradecimentos
 
-A equipe [DevSuperior](https://devsuperior.com "Site da DevSuperior")  que auxiliou na construção e finalização do projeto, uma semana na qual trouxe muitos ensinamentos e dicas durante cada etapa do projeto, tirando dúvidas dos participantes, além da comunidade se ajudar.
+A equipe [DevSuperior](https://devsuperior.com "Site da DevSuperior")  que auxiliou na construção e finalização do projeto, uma semana na qual trouxe muitos ensinamentos e dicas durante cada etapa do projeto, tirando dúvidas dos participantes para obter o melhor resultado.
